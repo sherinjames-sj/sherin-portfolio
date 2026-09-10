@@ -76,4 +76,4 @@ Nothing about the site itself needs to change for this: the domain just points a
 
 ## Credits
 
-Designed and built by Sherin James, with help from Claude (Anthropic) for structure, copywriting, and front-end implementation.
+Designed and built by Sherin James :)
