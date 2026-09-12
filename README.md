@@ -2,7 +2,7 @@
 
 **Live site:** https://sherinjames-sj.github.io/sherin-portfolio/
 
-A personal portfolio for Sherin James, AI & Data Professional (MSc Artificial Intelligence, Distinction, University of East London). Built as a set of plain HTML pages sharing one stylesheet and one script, with a playful, hand-drawn visual identity layered over a professional case for hiring managers and recruiters.
+Hello, This is Sherin James and welcome to my portfolio, I am an AI & Data Professional (MSc Artificial Intelligence, Distinction, University of East London). Built as a set of plain HTML pages sharing one stylesheet and one script, with a playful, hand-drawn visual identity layered over a professional case for hiring managers and recruiters.
 
 ## What's in it
 
@@ -69,16 +69,3 @@ Live URL: `https://sherinjames-sj.github.io/sherin-portfolio/`
 **Replacing the CV:**
 1. Add the new PDF to the repo.
 2. Either name it exactly `Sherin_James_CV.pdf` (overwriting the old one), or update every `href="Sherin_James_CV.pdf"` reference across the pages if using a different filename.
-
-## Custom domain (optional, not yet set up)
-
-This site currently lives at the default `sherinjames-sj.github.io/sherin-portfolio/` address. To point a purchased domain (e.g. `sherinjames.com`) at it instead:
-1. Add a `CNAME` file to the repo root containing just the domain name.
-2. At the domain registrar, add a `CNAME` DNS record (for a subdomain like `www`) or `A` records (for an apex domain) pointing at GitHub Pages; see [GitHub's custom domain docs](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site) for the exact records.
-3. Set the custom domain in **Settings → Pages** on this repo.
-
-Nothing about the site itself needs to change for this: the domain just points at the same GitHub Pages deployment.
-
-## Credits
-
-Designed and built by Sherin James :)
