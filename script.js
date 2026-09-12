@@ -275,3 +275,88 @@
     });
   });
 })();
+
+// ---------------- walking cat beside the brand name (all pages) ----------------
+(function(){
+  var row = document.querySelector('.topbar-row1');
+  if (!row) return;
+  var cat = document.createElement('span');
+  cat.className = 'walking-cat';
+  cat.setAttribute('aria-hidden', 'true');
+  cat.innerHTML = '<span class="walking-cat-emoji">🐈</span>';
+  row.appendChild(cat);
+})();
+
+// ---------------- meow + robot cats on the "hi, I'm Sherin" pill (home only) ----------------
+(function(){
+  var eyebrow = document.querySelector('.hero-eyebrow');
+  if (!eyebrow) return;
+
+  eyebrow.setAttribute('role', 'button');
+  eyebrow.setAttribute('tabindex', '0');
+  eyebrow.setAttribute('aria-label', eyebrow.textContent.trim() + ' (tap for a surprise)');
+
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var audioCtx = null;
+
+  function playMeow(){
+    try {
+      var Ctx = window.AudioContext || window.webkitAudioContext;
+      if (!Ctx) return;
+      if (!audioCtx) audioCtx = new Ctx();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      var now = audioCtx.currentTime;
+      var osc = audioCtx.createOscillator();
+      var gain = audioCtx.createGain();
+      osc.type = 'sawtooth';
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.frequency.setValueAtTime(560, now);
+      osc.frequency.linearRampToValueAtTime(920, now + 0.11);
+      osc.frequency.linearRampToValueAtTime(520, now + 0.30);
+      osc.frequency.linearRampToValueAtTime(340, now + 0.46);
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.exponentialRampToValueAtTime(0.3, now + 0.06);
+      gain.gain.exponentialRampToValueAtTime(0.2, now + 0.28);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.5);
+      osc.start(now);
+      osc.stop(now + 0.52);
+    } catch (e) { /* audio not available, fail silently */ }
+  }
+
+  function spawnRobotCats(){
+    if (reduceMotion) return;
+    var rect = eyebrow.getBoundingClientRect();
+    var cx = rect.left + rect.width / 2;
+    var cy = rect.top + rect.height / 2;
+    var count = 3;
+    for (var i = 0; i < count; i++){
+      (function(i){
+        var bot = document.createElement('span');
+        bot.className = 'robot-cat-pop';
+        bot.textContent = '🤖';
+        bot.style.left = cx + 'px';
+        bot.style.top = cy + 'px';
+        var angle = (-70 + i * 70) * (Math.PI / 180);
+        var dist = 60 + Math.random() * 30;
+        bot.style.setProperty('--dx', (Math.cos(angle) * dist).toFixed(1) + 'px');
+        bot.style.setProperty('--dy', (Math.sin(angle) * dist - 45).toFixed(1) + 'px');
+        document.body.appendChild(bot);
+        setTimeout(function(){ bot.remove(); }, 900);
+      })(i);
+    }
+  }
+
+  function trigger(){
+    playMeow();
+    spawnRobotCats();
+  }
+
+  eyebrow.addEventListener('click', trigger);
+  eyebrow.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      trigger();
+    }
+  });
+})();
