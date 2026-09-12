@@ -64,12 +64,14 @@
     background: color-mix(in srgb, var(--surface) 90%, transparent); backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--line); width:100%; max-width:100%;
   }
-  .topbar-row1 { display:flex; align-items:center; justify-content:center; gap:10px; padding: 12px 18px 6px; }
-  .brand { display:flex; align-items:center; gap:8px; font-family:'Fredoka',sans-serif; font-weight:600; font-size:15.5px; cursor:pointer; border:none; background:none; color:var(--ink); padding:6px 8px; white-space:nowrap; }
+  .topbar-row1 { position:relative; display:flex; align-items:center; justify-content:flex-start; gap:10px; padding: 12px 18px 6px; }
+  .brand { position:relative; z-index:2; display:flex; align-items:center; gap:8px; font-family:'Fredoka',sans-serif; font-weight:600; font-size:15.5px; cursor:pointer; border:none; background:none; color:var(--ink); padding:6px 8px; white-space:nowrap; }
   @media (max-width: 420px) { .brand { font-size:13.5px; } }
-  .walking-cat { position:relative; width:42px; height:22px; overflow:hidden; display:inline-block; flex:none; }
-  .walking-cat-emoji { position:absolute; top:50%; left:-22px; transform:translateY(-50%) scaleX(-1); font-size:17px; animation: walkCat 3.2s linear infinite; }
-  @keyframes walkCat { from { left:-22px; } to { left:120%; } }
+  .cat-walk-track { position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:1; }
+  .walking-cat-emoji { position:absolute; top:50%; left:-40px; transform:translateY(-50%) scaleX(-1); font-size:19px; animation: walkAcross 9s linear infinite; }
+  .walking-cat-bob { display:inline-block; animation: catBob 0.28s steps(2) infinite; }
+  @keyframes walkAcross { from { left:-40px; } to { left:calc(100% + 40px); } }
+  @keyframes catBob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
   .subnav { position:relative; display:flex; justify-content:safe center; gap:6px; overflow-x:auto; padding: 0 18px 10px; scrollbar-width:none; -webkit-overflow-scrolling:touch; width:100%; }
   .subnav.is-hidden { display:none; }
   .subnav::-webkit-scrollbar { display:none; }
@@ -167,8 +169,8 @@
   .bubble-btn:nth-child(9){ animation-delay: -4.8s; background: color-mix(in srgb, var(--accent-4) 22%, var(--surface)); }
 
   @media (prefers-reduced-motion: reduce) {
-    .bubble-btn, .critter, .walking-cat-emoji, .robot-cat-pop { animation: none !important; }
-    .walking-cat-emoji { left: 10px; transform: translateY(-50%); }
+    .bubble-btn, .critter, .walking-cat-emoji, .walking-cat-bob, .robot-cat-pop { animation: none !important; }
+    .walking-cat-emoji { left: 20px; transform: translateY(-50%); }
   }
 
   /* ---------- hero-eyebrow meow interaction ---------- */
