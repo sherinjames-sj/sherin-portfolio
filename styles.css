@@ -358,3 +358,17 @@
 
 /* Nav elements converted from <button> to <a> for multi-page navigation */
 .brand, .subnav-btn, .home-btn, .bubble-btn { text-decoration: none; }
+
+/* ---- Home: ISL spotlight ---- */
+.spotlight-band { max-width:720px; margin: 30px auto 0; padding:0 20px; }
+.spotlight-band .project-title { margin-top:6px; }
+.spotlight-cta { justify-content:flex-start; margin-top:4px; }
+
+/* ---- shared "new" tier, alongside the existing "featured" tier ---- */
+.new-tier { border:2px solid var(--accent-2); }
+.badge-new { color:var(--accent-2-deep); background:color-mix(in srgb, var(--accent-2) 16%, var(--surface)); }
+
+/* ---- verse footer, every page ---- */
+.verse-footer { max-width:720px; margin:44px auto 0; padding:22px 20px 34px; text-align:center; border-top:1px solid var(--line); }
+.verse-footer p { font-style:italic; font-size:13px; color:var(--ink-soft); line-height:1.6; margin:0 0 4px; }
+.verse-footer span { display:block; font-family:'Space Mono',monospace; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-faint); }
