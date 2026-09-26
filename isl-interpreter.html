@@ -38,6 +38,29 @@
       <p>Come back for updates, or check the Projects page for the current status.</p>
     </div>
 
+    <article class="project-card">
+      <h3 class="project-title">🧏 How it's built</h3>
+      <p class="project-desc">Camera in, captions out sounds simple. Under the hood it's landmark extraction feeding a sequence model, not a single-frame classifier, because a sign is a short motion, not a still image.</p>
+
+      <p class="mini-label">The pipeline</p>
+      <div class="pipeline-row">
+        <div class="pipeline-step">Camera feed<span>webcam or phone, no special hardware</span></div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">Landmark extraction<span>MediaPipe hand + pose keypoints</span></div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">Sequence model<span>LSTM over the landmark sequence</span></div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">Sign classification<span>fixed vocabulary, v1</span></div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">Live caption<span>on-screen text output</span></div>
+      </div>
+
+      <p class="project-desc">Starting scope is deliberately constrained: a vocabulary of 100&ndash;200 signs for one classroom subject, trained mainly off the INCLUDE dataset (around 4,300 videos, 263 ISL signs). Pose-based recognition like this tends to hold up better than raw-video approaches when training data is limited, which matters here since ISL has far less existing data and tooling than ASL.</p>
+
+      <p class="mini-label">Tech</p>
+      <div class="tag-row"><span class="tag">MediaPipe</span><span class="tag">PyTorch</span><span class="tag">OpenCV</span><span class="tag">LSTM</span><span class="tag">Computer Vision</span><span class="tag">Python</span></div>
+    </article>
+
     <article class="project-card new-tier">
       <span class="tier-badge-sm badge-new">🚧 Coming soon</span>
       <h3 class="project-title">🧏 What's planned</h3>
