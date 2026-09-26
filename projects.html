@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Projects · Sherin James</title>
-<meta name="description" content="Projects by Sherin James: MSc dissertation on predictive maintenance, LLM-powered apps, and AI testing & red-teaming.">
+<meta name="description" content="Projects by Sherin James: a real-time ISL interpreter in progress, an MSc dissertation on predictive maintenance, LLM-powered apps, and AI testing & red-teaming.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -45,6 +45,21 @@
       <div class="stat-chip"><span class="stat-num">≈12.97 days</span><span class="stat-label">⏳ RUL prediction MAE</span></div>
       <div class="stat-chip"><span class="stat-num">14,631</span><span class="stat-label">🔢 training sequences engineered</span></div>
     </div>
+
+    <article class="project-card new-tier" id="isl-interpreter">
+      <span class="tier-badge-sm badge-new">🆕 New · in progress</span>
+      <p class="project-kicker">🧏 Personal capstone project · started 2026</p>
+      <h3 class="project-title">🧏 ISL Interpreter</h3>
+      <p class="project-desc">Can a laptop camera keep up with a language that moves as fast as sign language does? I'm building a real-time Indian Sign Language recognition system aimed at mainstream classrooms with no interpreter in the room, camera in, live captions out.</p>
+      <p class="project-desc">Grounded in the INCLUDE dataset (around 4,300 videos across 263 ISL signs), using MediaPipe for hand and pose landmark extraction and an LSTM-based sequence model to read those landmarks as signs. Still early days: dataset work and the first model are underway.</p>
+      <div class="numbers-strip">
+        <div class="stat-chip"><span class="stat-num">1.57M+</span><span class="stat-label">🧏 children aged 0–19 with a hearing disability · Census of India, 2011</span></div>
+        <div class="stat-chip"><span class="stat-num">&lt;300</span><span class="stat-label">🧑‍🏫 certified ISL interpreters nationwide · ISLRTC</span></div>
+      </div>
+      <p class="mini-label">Tech</p>
+      <div class="tag-row"><span class="tag">MediaPipe</span><span class="tag">LSTM</span><span class="tag">Computer Vision</span><span class="tag">Accessibility</span><span class="tag">Python</span></div>
+      <div class="access-note">🚧 <span>In progress, not live yet. <a class="visit-link" href="isl-interpreter.html">Follow along →</a></span></div>
+    </article>
 
     <article class="project-card hero-tier">
       <span class="tier-badge-sm">⭐ Featured · MSc Dissertation</span>
@@ -202,6 +217,11 @@
   </section>
 
 </div>
+
+<footer class="verse-footer">
+  <p>&ldquo;I can do all things through Christ who strengthens me.&rdquo;</p>
+  <span>Philippians 4:13</span>
+</footer>
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 <script src="script.js"></script>
