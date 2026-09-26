@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISL Interpreter · Sherin James</title>
+<meta name="description" content="A real-time Indian Sign Language interpreter for mainstream classrooms, in progress. Follow along as it's built.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row1">
+    <a class="brand" href="index.html">🐾 Sherin James</a>
+  </div>
+  <nav class="subnav" id="subnav">
+    <a class="subnav-btn" href="index.html">🏠 Home</a>
+    <a class="subnav-btn" href="about.html">🐱 About</a>
+    <a class="subnav-btn active" href="projects.html">🧰 Projects</a>
+    <a class="subnav-btn" href="experience.html">💼 Experience</a>
+    <a class="subnav-btn" href="beyond-work.html">🧳 Beyond Work</a>
+    <a class="subnav-btn" href="skills.html">🦉 Skills</a>
+    <a class="subnav-btn" href="education.html">🎓 Education</a>
+    <a class="subnav-btn" href="made.html">🧩 Made</a>
+    <a class="subnav-btn" href="play.html">🏁 Play</a>
+    <a class="subnav-btn" href="contact.html">💌 Contact</a>
+  </nav>
+  <div aria-hidden="true" class="topbar-fade"></div>
+</div>
+
+<div class="view active" id="view-isl">
+
+  <section class="pane wrap">
+    <p class="section-tag">🧏 isl interpreter</p>
+    <h2 class="section-title">This one's still in the workshop</h2>
+    <div class="lede-block">
+      <p>A real-time Indian Sign Language interpreter for mainstream classrooms: camera in, live captions out, no interpreter required to be in the room.</p>
+      <p>It's early. Right now this means dataset work on INCLUDE (around 4,300 videos across 263 ISL signs), landmark extraction with MediaPipe, and a first LSTM-based sequence model, not a finished tool yet.</p>
+      <p>Come back for updates, or check the Projects page for the current status.</p>
+    </div>
+
+    <article class="project-card new-tier">
+      <span class="tier-badge-sm badge-new">🚧 Coming soon</span>
+      <h3 class="project-title">🧏 What's planned</h3>
+      <div class="feature-grid">
+        <div class="feature-item"><p class="f-title">📹 Live recognition</p><p class="f-desc">A webcam feed read frame by frame, turning hand and pose movement into recognised signs.</p></div>
+        <div class="feature-item"><p class="f-title">💬 Live captions</p><p class="f-desc">Recognised signs shown as readable captions in real time, for a classroom with no interpreter present.</p></div>
+        <div class="feature-item"><p class="f-title">🎓 Built on INCLUDE</p><p class="f-desc">Trained and evaluated against the INCLUDE ISL dataset, around 4,300 videos across 263 signs.</p></div>
+      </div>
+      <p class="project-desc">Once there's a working demo, it'll live right here with the details, the numbers, and probably a few honest notes on what broke along the way.</p>
+    </article>
+
+    <div class="back-row"><a class="home-btn" href="projects.html">🧰 Back to Projects</a></div>
+  </section>
+
+</div>
+
+<footer class="verse-footer">
+  <p>&ldquo;I can do all things through Christ who strengthens me.&rdquo;</p>
+  <span>Philippians 4:13</span>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
